@@ -2,5 +2,151 @@
 1.VARIABLES
 2.BASIC tags
 3.BASIC class
+4.Button & btn link
+6.HEADER
+  6.1.HEADER menu
+
+
+
+20.MEDIA
 
 */
+
+/*----------- 1.VARIABLES ----*/
+:root {
+  --color-white: white;
+  --color-black: black;
+
+  --color-button: #7ae5fd;
+  --color-button-hover: #00d0ff;
+
+  --color-link-hover: #000ad0;
+
+  --max-width: 81.125rem;
+}
+
+/*----------- 2.BASIC tags ----*/
+body {
+  background: var(--color-white);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--color-black);
+}
+
+a {
+  text-decoration: none;
+}
+
+/*----------- 3.BASIC class ----*/
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.container-padding {
+  padding-left: clamp(
+    1.25rem,
+    -1.93735rem + 7.083vw,
+    4.4375rem
+  ); /*720 px - 20 px*/
+  padding-right: clamp(
+    1.25rem,
+    -1.93735rem + 7.083vw,
+    4.4375rem
+  ); /*720 px - 20 px*/
+}
+
+/*----------- 4.Button & btn link ----*/
+.btn {
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5.4375rem;
+  padding: 1.3125rem 2.1875rem;
+  background: var(--color-button);
+}
+
+.btn:hover {
+  background: var(--color-button-hover);
+}
+
+.btm-menu {
+  margin-inline-start: 1.5rem;
+}
+
+.btn_link {
+  font-family: Montserrat;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2; /* 21.6px */
+  color: var(--color-black);
+}
+
+/*----------- 6.HEADER ----*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  /* border: 2px solid red; */
+}
+
+.logo {
+  width: 4.0625rem;
+  height: 4.0625rem;
+}
+
+/*----------- 6.1.HEADER menu----*/
+.menu {
+  display: flex;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  column-gap: clamp(2rem, 0.50015rem + 3.333vw, 3.5rem);
+  /* border: 2px solid rgb(89, 0, 255); */
+}
+
+.menu-item {
+  font-size: 1.125rem;
+  color: var(--color-black);
+  line-height: 0.96896; /* 17.441px */
+}
+
+.menu-item:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.menu-burger {
+  display: none;
+}
+
+/*----------- 20.MEDIA ----*/
+@media screen and (max-width: 959.98px) {
+  .btm-menu {
+    margin-inline: 2.25rem;
+  }
+
+  .menu-items {
+    display: none;
+  }
+
+  .menu-burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 539.98px) {
+  .container-padding {
+    padding-left: clamp(0.625rem, -1.00008rem + 6.667vw, 1.25rem);/*390 px - 10 px*/
+    padding-right: clamp(0.625rem, -1.00008rem + 6.667vw, 1.25rem);/*390 px - 10 px*/
+  }
+
+  .btm-menu {
+    display: none;
+  }
+}
