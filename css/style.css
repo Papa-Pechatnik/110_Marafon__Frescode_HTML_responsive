@@ -5,7 +5,7 @@
 4.Button & btn link
 6.HEADER
   6.1.HEADER menu
-
+  6.2.HEADER main screen 
 
 
 20.MEDIA
@@ -16,6 +16,8 @@
 :root {
   --color-white: white;
   --color-black: black;
+  --color-light-blue: #f1fdff;
+  --color-light3-blue: #9ad2de;
 
   --color-button: #7ae5fd;
   --color-button-hover: #00d0ff;
@@ -23,6 +25,7 @@
   --color-link-hover: #000ad0;
 
   --max-width: 81.125rem;
+  --nav-height: 9rem;
 }
 
 /*----------- 2.BASIC tags ----*/
@@ -31,7 +34,7 @@ body {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  line-height: 120%;
+  line-height: 1.2;
   color: var(--color-black);
 }
 
@@ -85,11 +88,14 @@ a {
 }
 
 /*----------- 6.HEADER ----*/
+
 .nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  align-items: center;
+  height: var(--nav-height);
+  /*padding-top: 2.5rem;
+  padding-bottom: 2.5rem;*/
   /* border: 2px solid red; */
 }
 
@@ -107,7 +113,7 @@ a {
   display: flex;
   align-items: center;
   column-gap: clamp(2rem, 0.50015rem + 3.333vw, 3.5rem);
-  /* border: 2px solid rgb(89, 0, 255); */
+  border: 2px solid rgb(89, 0, 255);
 }
 
 .menu-item {
@@ -123,6 +129,62 @@ a {
 
 .menu-burger {
   display: none;
+}
+
+/*----------- 6.2.HEADER main screen ---*/
+.screen {
+  background-color: var(--color-light3-blue);
+  border: 2px solid red;
+  height: calc(100vh - var(--nav-height));
+}
+
+.screen > div {
+  height: inherit;
+  display: flex;
+}
+
+.screen-heading {
+  max-width: fit-content;
+  height: inherit;
+  
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1.25rem;
+
+  border: 2px solid green;
+}
+
+.screen-titel {
+  width: min-content;
+  font-size: clamp(2.25rem, 1.2256rem + 3.152vw, 4.0625rem);
+  font-weight: 800;
+  line-height: 0.95; /* 61.685px */
+  letter-spacing: clamp(-0.08125rem, -0.03245rem - 0.054vw, -0.05rem);
+  text-transform: uppercase;
+  border: 2px solid red;
+}
+
+.screen-text {
+  max-width: calc(76% + 15 * ((100vw - 390px) / 1000));
+  font-size: 1.25rem;
+  border: 2px solid red;
+}
+
+.screen .btn {
+  background: var(--color-white);
+}
+
+.screen .btn:hover {
+  background: var(--color-link-hover);
+}
+
+.screen .btn:hover .btn_link {
+  color: var(--color-white);
+}
+
+.screen-margin {
+  margin-inline-start: clamp(1.375rem, 0.9512rem + 1.304vw, 2.125rem);
 }
 
 /*----------- 20.MEDIA ----*/
@@ -142,11 +204,28 @@ a {
 
 @media screen and (max-width: 539.98px) {
   .container-padding {
-    padding-left: clamp(0.625rem, -1.00008rem + 6.667vw, 1.25rem);/*390 px - 10 px*/
-    padding-right: clamp(0.625rem, -1.00008rem + 6.667vw, 1.25rem);/*390 px - 10 px*/
+    padding-left: clamp(
+      0.625rem,
+      -1.00008rem + 6.667vw,
+      1.25rem
+    ); /*390 px - 10 px*/
+    padding-right: clamp(
+      0.625rem,
+      -1.00008rem + 6.667vw,
+      1.25rem
+    ); /*390 px - 10 px*/
+  }
+
+  .header {
+    background: var(--color-light-blue);
   }
 
   .btm-menu {
     display: none;
+  }
+
+  .screen-margin {
+    margin-inline-start: none;
+    margin-inline-end: 0;
   }
 }
