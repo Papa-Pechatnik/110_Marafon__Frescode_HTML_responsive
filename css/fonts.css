@@ -56,3 +56,46 @@
   font-weight: 800;
   font-display: swap;
 }
+
+/* Ico - Fonts */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/font-icon/icomoon.eot?wfcadb'); /* IE9 Compat Modes */
+  src: local(""),
+      url('../fonts/font-icon/icomoon.eot?wfcadb#iefix') format('embedded-opentype'),  /* IE6-IE8 */
+      url("../fonts/font-icon/icomoon.woff2?wfcadb") format("woff2"), /* Super Modern Browsers */
+      url('../fonts/font-icon/icomoon.woff?wfcadb') format('woff'),
+       url('../fonts/font-icon/icomoon.ttf?wfcadb') format('truetype'),
+      url('../fonts/font-icon/icomoon.svg?wfcadb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before
+ {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  /* speak: never; */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e900";
+}
+.icon-telegram:before {
+  content: "\e901";
+}
+.icon-viber:before {
+  content: "\e902";
+}
+
