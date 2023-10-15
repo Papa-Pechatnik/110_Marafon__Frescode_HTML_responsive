@@ -45,9 +45,16 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
 h2 {
   font-size: clamp(2.5rem, 2.03566rem + 1.905vw, 3.75rem);
-  text-transform: uppercase;
 }
 
 /*----------- 3.BASIC class ----*/
@@ -69,6 +76,10 @@ h2 {
   ); /*720 px - 20 px*/
 }
 
+.off {
+  display: none;
+}
+
 /*----------- 4.Button & btn link ----*/
 .btn {
   text-transform: uppercase;
@@ -78,7 +89,7 @@ h2 {
   background: var(--color-button);
 }
 
-.btn:hover {
+.btn:focus, .btn:hover {
   background: var(--color-button-hover);
 }
 
@@ -95,13 +106,20 @@ h2 {
   color: var(--color-black);
 }
 
-/*----------- 6.HEADER ----*/
+.btn-more,
+.btn-bank {
+  display: block;
+  margin: 0 auto;
+}
 
+
+/*----------- 6.HEADER ----*/
 .nav {
+  height: var(--nav-height);
+
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: var(--nav-height);
+  align-items: center; 
 }
 
 .logo {
@@ -173,6 +191,7 @@ h2 {
 .screen-text {
   max-width: calc(76% + 15 * ((100vw - 390px) / 1000));
   font-size: 1.25rem;
+  margin-bottom: 1.25rem;
   border: 2px solid red;
 }
 
@@ -180,7 +199,9 @@ h2 {
   background: var(--color-white);
 }
 
-.screen .btn:hover {
+.screen .btn:focus,
+.screen .btn:hover
+ {
   background: var(--color-link-hover);
 }
 
@@ -232,6 +253,52 @@ h2 {
 
 
 /*----------- 7.2.MAIN main ----*/
+.main-help {
+  margin-bottom: 10rem;
+}
+.box-help {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(2.5rem, 1.87495rem + 1.389vw, 3.125rem); /*720 px - 40 px*/
+  margin-bottom: clamp(3.125rem, 4.83934rem - 1.905vw, 4.375rem);
+  border: 2px solid red;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(1.25rem, -1.37485rem + 5.833vw, 3.875rem); /*720 px - 20 px*/
+
+  background: var(--color-light-blue);
+  border-radius: 0.625rem;
+  padding: 2.5rem clamp(1.25rem, -1.37485rem + 5.833vw, 3.875rem); /*720 px - 20 px*/
+}
+
+.card-titel {
+  font-size: clamp(1.875rem, 0.8751rem + 2.222vw, 2.875rem);
+  letter-spacing: -0.0575rem;
+}
+
+.card-subject {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.625rem;
+}
+
+.card-subtitle {
+  font-weight: 600;
+}
+
+.card-subtitle,
+.card-text {
+  font-size: clamp(1rem, 0.90713rem + 0.381vw, 1.25rem);
+}
+
+.card-img {
+  max-width: clamp(20rem, -20.76928rem + 63.702vw, 36.5625rem);
+  border-radius: 0.625rem;
+}
 
 /*----------- 20.MEDIA ----*/
 @media screen and (max-width: 959.98px) {
@@ -252,7 +319,16 @@ h2 {
   .main-haeder {
     align-items: start;
     text-align: start;
+  }
 
+  .card-item {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: clamp(3.875rem, 5.50008rem + -6.667vw, 2.5rem);
+  }
+
+  .card-img {
+    max-width: 100%;
   }
 }
 
