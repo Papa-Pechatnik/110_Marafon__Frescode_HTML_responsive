@@ -93,7 +93,6 @@ h2 {
   margin-bottom: clamp(4.375rem, 2.28582rem + 8.571vw, 10rem);
 }
 
-
 /*----------- 4.Button & btn link ----*/
 .btn {
   display: inline-block;
@@ -265,6 +264,12 @@ h2 {
   border: 2px solid red;
 }
 
+/* ! Выровнять посилання */
+.box-help + a {
+
+color: green;
+}
+
 .card-item {
   display: flex;
   flex-direction: row;
@@ -305,19 +310,22 @@ h2 {
 .to-get {
   text-wrap: balance;
   text-align: center;
-  
 }
 
 .to-get_title {
-max-width: max-content;
-margin-inline: auto;
-border: 2px solid red;
+  max-width: max-content;
+  margin-inline: auto;
+  border: 2px solid red;
 }
 
 .to-get_subtitle {
   border: 2px solid red;
   margin-inline: auto;
-  width: clamp(21.875rem, 12.82139rem + 37.143vw, 46.25rem); /*тут потрыбно проценти Помилка*/ 
+  width: clamp(
+    21.875rem,
+    12.82139rem + 37.143vw,
+    46.25rem
+  ); /*тут потрыбно проценти Помилка*/
   color: var(--color-medium-blue);
   font-size: clamp(1rem, 0.90713rem + 0.381vw, 1.25rem);
   margin-top: 0.9375rem;
@@ -333,19 +341,18 @@ border: 2px solid red;
 }
 
 .calculation {
-  margin: 0 auto;
+  margin-inline: auto;
   max-width: 21.4375rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
   font-size: 3.75rem;
-  text-align: center;
+
   text-transform: uppercase;
   letter-spacing: -0.075rem;
   padding-top: clamp(1.0625rem, 1.57668rem - 0.571vw, 1.4375rem);
   color: var(--color-black);
-
 }
 
 .calculation li:nth-child(2) {
@@ -414,17 +421,16 @@ border: 2px solid red;
     margin-inline-start: none;
     margin-inline-end: 0;
   }
-  .to-get,
-  .to-get_title,
-  .to-get_subtitle,
-  .calculation {
-    text-align: start;
-    margin-inline-start: 0;
-  }
 }
 
 @media screen and (max-width: 390.98px) {
   .to-get {
     text-align: center;
+  }
+
+  .to-get_title,
+  .to-get_subtitle {
+    text-align: left;
+    margin-inline-start: 0;
   }
 }
