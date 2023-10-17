@@ -3,6 +3,7 @@
 2.BASIC tags
 3.BASIC class
 4.Button & btn link
+5.Fonts
 6.HEADER
   6.1.HEADER menu
   6.2.HEADER main screen 
@@ -22,56 +23,39 @@
 
 /*----------- 1.VARIABLES ----*/
 :root {
+  --max-width: 81.125rem;
   --color-white: white;
   --color-black: black;
+
   --color-medium-blue: #73a6b1;
-
   --color-light-blue: #f1fdff;
-  --color-light3-blue: #9ad2de;
 
+  --color-light3-blue: #9ad2de;
   --color-button: #7ae5fd;
+
   --color-button-hover: #00d0ff;
 
   --color-link-hover: #000ad0;
-
   --color-footer: #f9fadf;
-  --color-footer1: #f2f5cf;
 
-  --max-width: 81.125rem;
+  --color-footer1: #f2f5cf;
   --nav-height: 9rem;
 }
 
 /*----------- 2.BASIC tags ----*/
 body {
-  background: var(--color-white);
   font-family: Montserrat, Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.2;
   color: var(--color-black);
+  background: var(--color-white);
 }
 
 a {
-  text-decoration: none;
   display: inline-block;
   text-align: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: clamp(2.5rem, 2.03566rem + 1.905vw, 3.75rem);
-  letter-spacing: clamp(
-    -0.075rem,
-    -0.04074rem + -0.038vw,
-    -0.05rem
-  ); /* 1.2px | -0.8px; */
+  text-decoration: none;
 }
 
 /*----------- 3.BASIC class ----*/
@@ -81,12 +65,12 @@ h2 {
 }
 
 .container-padding {
-  padding-left: clamp(
+  padding-right: clamp(
     1.25rem,
     -1.93735rem + 7.083vw,
     4.4375rem
   ); /*720 px - 20 px*/
-  padding-right: clamp(
+  padding-left: clamp(
     1.25rem,
     -1.93735rem + 7.083vw,
     4.4375rem
@@ -98,7 +82,7 @@ h2 {
 }
 
 .bottom-indent {
-  padding-bottom: clamp(4.375rem, 2.28582rem + 8.571vw, 10rem);
+  padding-bottom: clamp(70px, 2.28582rem + 8.571vw, 160px);
 }
 
 /*----------- 4.Button & btn link ----*/
@@ -122,9 +106,9 @@ h2 {
 
 .btn_link {
   font-family: Montserrat;
-  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
+  font-size: 1.125rem;
   line-height: 1.2; /* 21.6px */
   color: var(--color-black);
 }
@@ -134,13 +118,38 @@ h2 {
   margin: 0 auto;
 }*/
 
+/*----------- 5.Fonts ----*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 2.03566rem + 1.905vw, 3.75rem);
+  letter-spacing: clamp(
+    -0.075rem,
+    -0.04074rem + -0.038vw,
+    -0.05rem
+  ); /* 1.2px | -0.8px; */
+}
+
+.font-size-h20 {
+  font-size: clamp(1rem, 0.89621rem + 0.437vw, 1.25rem);
+}
+
+.font-size-h27 {
+  font-size: clamp(1.25rem, 1.14194rem + 0.455vw, 1.6875rem);
+}
+
 /*----------- 6.HEADER ----*/
 .nav {
-  height: var(--nav-height);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: var(--nav-height);
 }
 
 .logo {
@@ -160,8 +169,8 @@ h2 {
 }
 
 .menu-item {
-  font-size: 1.125rem;
   color: var(--color-black);
+  font-size: 1.125rem;
   line-height: 0.96896; /* 17.441px */
 }
 
@@ -176,38 +185,37 @@ h2 {
 
 /*----------- 6.2.HEADER main screen ---*/
 .screen {
-  background-color: var(--color-light3-blue);
   height: calc(100vh - var(--nav-height));
+  background-color: var(--color-light3-blue);
 }
 
 .screen > div {
-  height: inherit;
   display: flex;
+  height: inherit;
 }
 
 .screen-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: fit-content;
   height: inherit;
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   row-gap: 1.25rem;
 }
 
 .screen-titel {
   width: min-content;
-  font-size: clamp(2.25rem, 1.2256rem + 3.152vw, 4.0625rem);
   font-weight: 800;
+  font-size: clamp(2.25rem, 1.2256rem + 3.152vw, 4.0625rem);
   line-height: 0.95; /* 61.685px */
-  letter-spacing: clamp(-0.08125rem, -0.03245rem - 0.054vw, -0.05rem);
   text-transform: uppercase;
+  letter-spacing: clamp(-0.08125rem, -0.03245rem - 0.054vw, -0.05rem);
 }
 
 .screen-text {
   max-width: calc(76% + 15 * ((100vw - 390px) / 1000));
-  font-size: 1.25rem;
   margin-bottom: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .screen .btn {
@@ -237,6 +245,7 @@ h2 {
   align-items: center;
   text-align: center;
   text-wrap: balance;
+
   padding-top: clamp(4.375rem, 2.35839rem + 8.491vw, 10rem);
   padding-bottom: clamp(4.375rem, 2.35839rem + 8.491vw, 10rem);
 }
@@ -253,21 +262,21 @@ h2 {
 }
 
 .goal-subtitle {
-  font-size: clamp(1rem, 0.90713rem + 0.381vw, 1.25rem);
   color: var(--color-medium-blue);
+  font-size: clamp(1rem, 0.90713rem + 0.381vw, 1.25rem);
 }
 
 /*----------- 7.2.MAIN main ----*/
+.main-help .btn {
+  /* ! Выровнять посилання */
+  margin-top: 50px;
+  color: green;
+}
+
 .box-help {
   display: flex;
   flex-direction: column;
   row-gap: clamp(2.5rem, 1.87495rem + 1.389vw, 3.125rem); /*720 px - 40 px*/
-  margin-bottom: clamp(3.125rem, 4.83934rem - 1.905vw, 4.375rem);
-}
-
-/* ! Выровнять посилання */
-.box-help + a {
-  color: green;
 }
 
 .card-item {
@@ -276,9 +285,9 @@ h2 {
   align-items: center;
   gap: clamp(1.25rem, -1.37485rem + 5.833vw, 3.875rem); /*720 px - 20 px*/
 
-  background: var(--color-light-blue);
-  border-radius: 0.625rem;
   padding: 2.5rem clamp(1.25rem, -1.37485rem + 5.833vw, 3.875rem); /*720 px - 20 px*/
+  border-radius: 0.625rem;
+  background: var(--color-light-blue);
 }
 
 .card-titel {
@@ -305,11 +314,83 @@ h2 {
   max-width: clamp(20rem, -20.76928rem + 63.702vw, 36.5625rem);
   border-radius: 0.625rem;
 }
-/*----------- 7.3.MAIN article ----*/
+
+/*----------- 7.3.MAIN article mission ----*/
+.mission {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: end;
+  width: auto;
+  margin-right: clamp(0px, -5.9437px + 1.524vw, 1rem);
+  margin-bottom: clamp(70px, 43.9987px + 6.667vw, 140px);
+  margin-left: clamp(0px, -5.9437px + 1.524vw, 1rem);
+}
+
+.mission-rectangle {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: clamp(
+    15.625rem,
+    4.00015rem + 25.833vw,
+    19.5rem
+  ); /*720px - 250 px | 960px-312px*/
+  background: var(--color-light-blue);
+}
+
+.mission-text {
+  display: flex;
+  z-index: 20;
+  flex: 50%;
+  align-items: center;
+  width: 100%;
+  height: clamp(
+    15.625rem,
+    4.00015rem + 25.833vw,
+    19.5rem
+  ); /*720px - 250 px | 960px-312px*/
+}
+
+.mission-text p {
+  margin-left: clamp(1.25rem, -0.32511rem + 4.667vw, 3.875rem);
+  text-wrap: balance; /* 540 - 20px*/
+}
+
+.mission-picture {
+  display: flex;
+  z-index: 15;
+  position: relative;
+  flex: 50%;
+  justify-content: center;
+}
+
+.mission-img {
+  height: clamp(
+    19.875rem,
+    14.88398rem + 20.476vw,
+    33.3125rem
+  ); /* 540px - 338 px | 567px*/
+}
+
+.mission-line {
+  z-index: -1;
+  position: absolute;
+  max-width: 114%;
+  height: clamp(
+    15.25rem,
+    11.39631rem + 15.81vw,
+    25.625rem
+  ); /* width: clamp(24.375rem, 16.83045rem + 30.952vw, 44.6875rem); */
+  left:50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /*----------- 7.4.MAIN section to-get----*/
 .to-get {
-  text-wrap: balance;
   text-align: center;
+  text-wrap: balance;
 }
 
 .to-get_title {
@@ -318,11 +399,11 @@ h2 {
 }
 
 .to-get_subtitle {
-  margin-inline: auto;
-  width: clamp(21.875rem, 12.82139rem + 37.143vw, 46.25rem); /* ! Зробити проценами*/
+  width: clamp(21.875rem, 12.82139rem + 37.143vw, 46.25rem);
+  margin-top: 0.9375rem; /* ! Зробити проценами*/
   color: var(--color-medium-blue);
   font-size: clamp(1rem, 0.90713rem + 0.381vw, 1.25rem);
-  margin-top: 0.9375rem;
+  margin-inline: auto;
 }
 
 .to-get_goal {
@@ -335,51 +416,51 @@ h2 {
 }
 
 .calculation {
-  margin-inline: auto;
-  max-width: 21.4375rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  max-width: 21.4375rem;
+  
+  color: var(--color-black);
   font-size: 3.75rem;
-
   text-transform: uppercase;
   letter-spacing: -0.075rem;
+
   padding-top: clamp(1.0625rem, 1.57668rem - 0.571vw, 1.4375rem);
-  color: var(--color-black);
+  margin-inline: auto;
 }
 
 .calculation li:nth-child(2) {
-  border-left: 1px solid var(--color-light3-blue);
-  border-right: 1px solid var(--color-light3-blue);
-  padding-left: 0.8125rem;
   padding-right: 0.8125rem;
+  padding-left: 0.8125rem;
+  border-right: 1px solid var(--color-light3-blue);
+  border-left: 1px solid var(--color-light3-blue);
 }
 
 /*----------- 8.FOOTER ----*/
 /*----------- 8.1.FOOTER section contact----*/
 .footer {
+  padding-bottom: clamp(0rem, -9.9999rem + 22.222vw, 10rem);
   background-color: var(--color-footer);
-  padding-bottom:clamp(0rem, -9.9999rem + 22.222vw, 10rem);
 }
 
 .contacts {
   display: flex;
   flex-direction: row;
-  gap: clamp(2.75rem, 1.61242rem + 4.667vw, 5.8125rem);
   padding-top: clamp(2.5rem, 2.26795rem + 0.952vw, 3.125rem);
   padding-bottom: clamp(2.5rem, 2.26795rem + 0.952vw, 3.125rem);
+  gap: clamp(2.75rem, 1.61242rem + 4.667vw, 5.8125rem);
 }
 
 .contacts h2 {
-  text-align: center;
-  flex: 1;
   display: inline-block;
+  flex: 1;
+  text-align: center;
 }
 
 .social-networks {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   row-gap: clamp(2.5625rem, 2.14759rem + 1.747vw, 3.5625rem);
 }
@@ -401,20 +482,16 @@ h2 {
   padding-top: 0.5625rem;
 }
 
-.font-size-h20 {
-  font-size: clamp(1rem, 0.89621rem + 0.437vw, 1.25rem);
-}
-
 .phone-text {
-  font-weight: 700;
   color: var(--color-black);
+  font-weight: 700;
 }
 
 .icon-phone,
 .icon-telegram,
 .icon-viber {
-  font-size: 2rem;
   color: var(--color-black);
+  font-size: 2rem;
 }
 
 .phone-text:focus,
@@ -432,13 +509,14 @@ h2 {
 /*----------- 8.2.FOOTER Form ----*/
 .form-box {
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
+  justify-content: space-between;
   justify-content: center;
   align-items: center;
-  gap: clamp(2.5rem, 1.26955rem + 5.048vw, 5.8125rem);
+  padding: clamp(2.5rem, 2.03566rem + 1.905vw, 3.75rem)
+    clamp(1.25rem, 0.32131rem + 3.81vw, 3.75rem);
   background: var(--color-white);
-  padding: clamp(2.5rem, 2.03566rem + 1.905vw, 3.75rem) clamp(1.25rem, 0.32131rem + 3.81vw, 3.75rem);
+  gap: clamp(2.5rem, 1.26955rem + 5.048vw, 5.8125rem);
 }
 
 .form {
@@ -451,45 +529,43 @@ h2 {
 }
 
 .form-img {
-
   position: relative;
 }
 
 .form-img img {
   width: 100%;
-
 }
 
 .form-img-circle {
   position: absolute;
+  top: 52%;
+  left: 62%;
   width: 3rem;
   height: 3rem;
   border-radius: 1.5rem;
+  color: var(--color-black);
   background-color: var(--color-light-blue);
   box-shadow: 6px 6px 0px var(--color-black);
-  left: 62%;
-  top: 52%;
-  color: var(--color-black);
 }
 
 .form-input {
   display: flex;
   flex-direction: column;
-  gap: 1.9375rem;
-  color: var(--color-black);
   margin-top: clamp(2.4375rem, 4.55975rem - 2.62vw, 3.9375rem);
+  color: var(--color-black);
+  gap: 1.9375rem;
 }
 
 .form-input-item {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-
   width: 100%;
   height: 4.125rem;
-  border-radius: 3.8125rem;
-  border: none;
   padding-left: 2.6875rem;
+
+  border: none;
+  border-radius: 3.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Montserrat";
 }
 
 .form-input-item[name="name"],
@@ -509,16 +585,16 @@ h2 {
 }
 
 .form-input-item[type="button"] {
+  padding-left: 0;
   font-size: 1.125rem;
   line-height: 120%;
   text-transform: uppercase;
-  padding-left: 0;
   background: var(--color-button);
 }
 
 .form-input-item[type="button"]:hover {
-  background-color: var(--color-button-hover);
   border: none;
+  background-color: var(--color-button-hover);
 }
 
 .form-input-item::placeholder {
@@ -561,8 +637,8 @@ h2 {
   }
 
   .footer-form.container-padding {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
   }
 
   .form,
@@ -578,20 +654,32 @@ h2 {
   .form-img img {
     width: 21.25rem;
   }
-  
+
   .form-box {
     flex-direction: column;
+  }
+
+  .mission {
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-light-blue);
+  }
+
+  .mission-text {
+    height: 100%;
+    padding-top: 2.5rem;
+    padding-bottom: 1.625rem;
   }
 }
 
 @media screen and (max-width: 539.98px) {
   .container-padding {
-    padding-left: clamp(
+    padding-right: clamp(
       0.625rem,
       -1.00008rem + 6.667vw,
       1.25rem
     ); /*390 px - 10 px*/
-    padding-right: clamp(
+    padding-left: clamp(
       0.625rem,
       -1.00008rem + 6.667vw,
       1.25rem
@@ -619,7 +707,6 @@ h2 {
   .contacts h2 {
     text-align: left;
   }
-
 }
 
 @media screen and (max-width: 390.98px) {
